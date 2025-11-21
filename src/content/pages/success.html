@@ -1,0 +1,37 @@
+---
+title: "Thank You! | Fitness3K Gym"
+description: "Thanks for getting in touch with Fitness3K. We'll be in contact shortly to get you started."
+permalink: "/success/"
+---
+
+{% extends "layouts/base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/success.css">
+    
+{% endblock %}
+{% block body %}
+
+<!--     << not using this minimalist version for now.
+<div class="success-page">
+    <h1>Success!</h1>
+    <p>Form submitted. You will hear back soon.</p>
+    <a href="/" class="cs-button-solid">Back to Homepage</a>
+</div>
+-->
+
+<div class="success-page">
+    <h1>We've received your details!</h1>
+    <p class="cs-main-text">
+        A member of our team will be in touch within 24 hours to answer your questions and help you get started.
+    </p>
+    <p class="cs-sub-text">
+        While you wait, check out our classes and our team..
+    </p>
+    
+    <div class="cs-button-group">
+        <a href="/classes/" class="cs-button-solid">Class Schedules</a>
+        <a href="/about/" class="cs-button-outline">Learn About Us</a>
+    </div>
+</div>
+
+{% endblock %}

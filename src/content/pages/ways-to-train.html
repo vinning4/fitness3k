@@ -1,0 +1,170 @@
+---
+title: "Ways To Train | Fitness3K Gym"
+description: "Available training options at Fitness3K Gym"
+permalink: "/ways-to-train/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/train.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- V add 4 card Services design -->
+
+<!-- ============================================ -->
+<!--       Ways to train - Services CS 343    -->
+<!-- ============================================ -->
+
+<section id="services-343">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Ways to train</span>
+            <h2 class="cs-title">Choose your challenge</h2>
+            <p class="cs-text">
+                Whether you want to burn fat, build muscle, improve endurance, get expert guidance or simply do your own thing, we have options for you.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="/assets/images/card1.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/card1.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/card1.jpg" alt="weightlifting" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Gym Floor</h3>
+                    <p class="cs-item-text">
+                        Use our full facility independently. The gym floor is packed with functional training options, a full set of free weights and cable machines, Olympic lifting platforms, bodyweight equipment and cardio equipment.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="/assets/images/card2.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/card2.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/card2.jpg" alt="Rope-training" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">HIIT Programs</h3>
+                    <p class="cs-item-text">
+                        High-intensity interval training programs that burn calories during and after your workout. Perfect for those optimizing their time with 30-45 minute sessions. Separate training area with HIIT-specific tools.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="/assets/images/card3.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/card3.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/card3.jpg" alt="personal-trainer" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Personal Training</h3>
+                    <p class="cs-item-text">
+                        A great way to stay committed to your goals with one-on-one coaching tailored to you. Whether you intend to get in shape, improve athletic performance or recover from injury, our qualified and experienced PTs can help you get there.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="/assets/images/card4.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/card4.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/card4.jpg" alt="group-fitness-class" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Group Classes</h3>
+                    <p class="cs-item-text">
+                        There's nothing like keeping up with a group to get pumped! Explore new movements, have fun while working up a sweat or make new friends in our boutique-style fitness classes that offer something for everyone.
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--         Pricing - pricing CS 1691         -->
+<!-- ============================================ -->
+
+<section id="pricing-1691">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Membership Pricing</span>
+            <h2 class="cs-title">We make it easy for you to start!</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-package">Membership</span>
+                <span class="cs-price">$60/mth</span>
+                <ul class="cs-ul">
+                    <li class="cs-li">Month-to-month</li>
+                    <li class="cs-li">24/7 gym access</li>
+                    <li class="cs-li">All group classes included</li>
+                    <li class="cs-li">No joining fee, no contracts</li>
+                    <li class="cs-li">Pause or cancel anytime</li>
+                    <li class="cs-li">20% student discount</li>
+                    <!-- Removed faded font for these 2 'unavbl options'..
+                    <li class="cs-li cs-disabled">Pause or cancel anytime</li>
+                    <li class="cs-li cs-disabled">Access to social event calendar</li>
+                    -->
+                </ul>
+                <a href="/contact/" class="cs-link">
+                    <span class="cs-link-text">Get Started</span>
+                    <img class="cs-arrow" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-arrow-right.svg"
+                            alt="icon" width="20" height="20" aria-hidden="true" />
+                </a>
+            </li>
+            <li class="cs-item"> <!-- V removed "cs-popular" class here -->
+                <span class="cs-package">Personal Training Add-on</span>
+                <span class="cs-price">From $60</span>
+                <ul class="cs-ul">
+                    <li class="cs-li">Single PT session: $60 </li>
+                    <li class="cs-li">4-session package: $200</li>
+                    <li class="cs-li">10-session package: $500</li>
+                    <li class="cs-li">Weekly/monthly PT hire available</li>
+                    <li class="cs-li">Nutrition planning included</li>
+                    <li class="cs-li">Free initial assessment</li>
+                    <!-- V removing disabled/inactive/faded option..
+                    <li class="cs-li cs-disabled">Remote Service mechanic</li>
+                    -->
+                </ul>
+                <!--
+                <a href="" class="cs-link">
+                    <span class="cs-link-text">Get Started</span>
+                    <img class="cs-arrow" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-arrow-right.svg"
+                            alt="icon" width="20" height="20" aria-hidden="true" />
+                </a> -->
+            </li>
+            <li class="cs-item">
+                <span class="cs-package">Trial Options</span>
+                <span class="cs-price">From $10</span>
+                <ul class="cs-ul">
+                    <li class="cs-li">FREE one week trial</li>
+                    <li class="cs-li">Day Pass: $10</li>
+                    <li class="cs-li">One Week Pass: $25</li>
+                    <li class="cs-li">24/7 gym access</li>
+                    <li class="cs-li">Access to group classes</li>
+                    <li class="cs-li">Sign-up-a-friend discount</li>
+                </ul>
+                <a href="" class="cs-link">
+                    <span class="cs-link-text">Get Started</span>
+                    <img class="cs-arrow" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-arrow-right.svg"
+                            alt="icon" width="20" height="20" aria-hidden="true" />
+                </a>
+            </li>
+        </ul>
+        <img class="cs-graphic"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/enterprise-pills.png" alt="pills"
+                height="196" width="582" loading="lazy" decoding="async">
+    </div>
+</section>
+                                
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

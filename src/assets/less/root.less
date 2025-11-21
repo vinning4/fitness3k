@@ -1,3 +1,5 @@
+
+
 // ─────────────────────────────────────────────────────────────────────────────
 // CODESTITCH GLOBAL STYLES
 // Core stylesheet containing CSS variables, dark mode styles, base element
@@ -11,21 +13,19 @@
 
 /* CodeStitch Core Styles + Reset */
 @media only screen and (min-width: 0rem) {
-    /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your 'h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+   
     :root {
-        --primary: #ff6a3e;
-        --primaryLight: #ffba43;
-        --secondary: #ffba43;
-        --secondaryLight: #ffba43;
-        --headerColor: #1a1a1a;
+        
+        --primary: #2ea4ff;
+        --primaryLight: #7ec7ff;
+        --secondary: #7ec7ff;
+        --secondaryLight: #7ec7ff;
+        /* --headerColor: #1a1a1a; */
+        --headerColor: #fff;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
-
-        /* Dark Mode Styles */
-        --dark: #082032;
-        --medium: #2c394b;
-        --accent: #334756;
-
+        --headerFont: Arial, sans-serif; /* V added */
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
         /* 31px - 49px */
@@ -33,31 +33,17 @@
         --bodyFontSize: 1rem;
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-
-        --headerFont: "Roboto", Arial, sans-serif;
-        --bodyFont: "Roboto", Arial, sans-serif;
     }
 
-    html,
     body {
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
-        font-family: var(--bodyFont);
-        font-size: 100%;
-        transition: background-color 0.3s;
-        color: var(--bodyTextColor);
     }
 
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
     }
-
     .cs-topper {
         font-size: var(--topperFontSize);
         line-height: 1.2em;
@@ -66,8 +52,9 @@
         letter-spacing: 0.1em;
         font-weight: 700;
         color: var(--primary);
-        margin-bottom: 0.25rem;
+        margin-bottom: (4/16rem);
         display: block;
+        font-family: var(--headerFont); /* V added */
     }
 
     .cs-title {
@@ -75,21 +62,25 @@
         font-weight: 900;
         line-height: 1.2em;
         text-align: inherit;
-        max-width: 43.75rem;
-        margin: 0 0 1rem 0;
+        max-width: (700/16rem);
+        margin: 0 0 (16/16rem) 0;
         color: var(--headerColor);
         position: relative;
+        font-family: var(--headerFont); /* V added */
     }
 
     .cs-text {
-        font-size: var(--bodyFontSize);
+        /* font-size: var(--bodyFontSize); */
+
         line-height: 1.5em;
         text-align: inherit;
         width: 100%;
-        max-width: 40.625rem;
+        max-width: (650/16rem);
         margin: 0;
-        color: var(--bodyTextColor);
+        color: var(--bodyTextColorWhite);
+        font-family: var(--headerFont); /* V added */
     }
+                            
 }
 
 /* Components + Utilities */
@@ -105,16 +96,17 @@
 
     // Buttons - can be replaced using CodeStitch's "Button" Stitches. Make sure to clear the default .cs-button-solid/outline styles from any new stitches you place.
     .cs-button-solid {
+        font-family: var(--headerFont); /* V added */
         z-index: 1;
         position: relative;
         display: inline-block;
         background-color: var(--primary);
         width: auto;
-        padding: (16/16rem) (32/16rem);
+        padding: (20/16rem) (32/16rem);
         text-decoration: none;
         text-transform: uppercase;
         font-size: (16/16rem);
-        line-height: (16/16em);
+        line-height: (20/16em);
         font-weight: bold;
         border-radius: (4/16rem);
         overflow: hidden;
@@ -126,7 +118,7 @@
         text-align: center;
 
         &:hover {
-            color: #fff;
+            color: #000;
 
             &:before {
                 width: 100%;
@@ -141,12 +133,12 @@
             content: "";
             opacity: 1;
             display: block;
-            background-color: #000;
+            background-color: #fff;
             height: 100%;
 
             //Transition properties
             width: 0;
-            transition: width 0.3s;
+            transition: width 0.2s;
         }
     }
 
@@ -155,22 +147,23 @@
         position: relative;
         display: inline-block;
         width: auto;
-        padding: (16/16rem) (32/16rem);
+        padding: (20/16rem) (28/16rem);
         text-decoration: none;
         text-transform: uppercase;
         font-size: (16/16rem);
-        line-height: (16/16em);
+        line-height: (20/16em);
         font-weight: bold;
-        border: 2px solid #000;
+        border: 2px solid #fff;
+        border-radius: (4/16rem);
 
         // Transition Properties
-        color: #000;
+        color: #fff;
         transition: color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
 
         &:hover {
-            color: #fff;
+            color: #000;
 
             &:before {
                 width: 100%;
@@ -185,7 +178,7 @@
             content: "";
             opacity: 1;
             display: block;
-            background-color: #000;
+            background-color: #fff;
             height: 100%;
 
             //Transition properties
@@ -257,13 +250,15 @@
     p,
     li,
     a {
-        font-size: (16/16rem);
+        font-size: (18/16rem);
         line-height: 1.5em;
+        font-family: "Roboto", sans-serif; /* V added from @font-face */
     }
 
     p,
     li {
         color: var(--bodyTextColor);
+
 
         a {
             color: var(--primary);
@@ -327,84 +322,7 @@
     }
 }
 
-/*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #dark-mode-toggle {
-            .cs-sun {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-
-            .cs-moon {
-                opacity: 0;
-                transform: translate(-50%, -150%);
-                fill: #fff;
-            }
-        }
-    }
-
-    #dark-mode-toggle {
-        width: (48/16rem);
-        height: (48/16rem);
-        padding: 0;
-        background: transparent;
-        border: none;
-        display: block;
-        position: absolute;
-        top: (10/16rem);
-        right: (70/16rem);
-        z-index: 1000;
-        overflow: hidden;
-
-        img,
-        svg {
-            width: (20/16rem);
-            height: (20/16rem);
-            //center image inside button
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .cs-moon {
-            z-index: 2;
-            // Transition properties
-            transition: transform 0.3s, opacity 0.3s;
-
-            // fill: yellow; --> uncomment to change the color of the moon if needed
-        }
-
-        .cs-sun {
-            opacity: 0;
-            z-index: 1;
-            // Transition property
-            transform: translate(-50%, 100%);
-            transition: transform 0.3s, opacity 0.3s;
-        }
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 1024px) {
-    #dark-mode-toggle {
-        margin: 0;
-        position: relative;
-        top: auto;
-        right: auto;
-        transform: none;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
@@ -423,7 +341,10 @@
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
         padding: (12/16rem) (16/16rem);
-        background-color: #fff;
+
+        /* background-color: #fff; */
+        background-color: #1a1a1a;
+        
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
@@ -472,7 +393,7 @@
 
         .cs-logo {
             width: 40%;
-            max-width: (146/16rem);
+            max-width: (100/16rem);
             height: 100%;
             margin: 0 auto 0 0;
             /* prevents padding and border from affecting height and width */
@@ -498,7 +419,7 @@
             width: clamp(2.75rem, 6vw, 3rem);
             height: clamp(2.75rem, 6vw, 3rem);
             margin: 0 0 0 auto;
-            background-color: transparent;
+            /* background-color: transparent; */
             border: none;
             border-radius: (4/16rem);
             display: flex;
@@ -569,7 +490,8 @@
 
         .cs-ul-wrapper {
             height: 100vh;
-            background-color: #fff;
+            /* background-color: #fff; */
+            background-color: #1a1a1a;
             box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
             opacity: 0;
             position: absolute;
@@ -639,7 +561,7 @@
 
         .cs-li-link {
             /* 16px - 24px */
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             line-height: 1.2em;
             text-decoration: none;
             margin: 0;
@@ -673,31 +595,7 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (max-width: 1023.5px) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
 
-            .cs-logo {
-                /* makes it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-line {
-                background-color: #fff;
-            }
-
-            .cs-ul-wrapper {
-                background-color: var(--medium);
-            }
-
-            .cs-li-link {
-                color: var(--bodyTextColorWhite);
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---     Navigation Dropdown    -->
@@ -730,14 +628,7 @@
             }
         }
 
-        .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
-            position: absolute;
-            top: 50%;
-            right: (-20/16rem);
-            transform: translateY(-50%);
-        }
+       
 
         .cs-drop-ul {
             width: 100%;
@@ -797,17 +688,14 @@
             }
         }
 
-        .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
-            display: inline-block;
-        }
+        
 
         .cs-drop-ul {
             min-width: (200/16rem);
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            /* background-color: #fff; */
+            background-color: #1a1a1a;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
             opacity: 0;
             border-bottom: 5px solid var(--primary);
@@ -904,29 +792,7 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #cs-navigation {
-            .cs-drop-ul {
-                background-color: var(--dark);
-            }
 
-            .cs-li-link {
-                &.cs-drop-link {
-                    &:hover {
-                        background-color: var(--medium);
-                    }
-                }
-            }
-
-            .cs-drop-icon {
-                /* turns it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---     Desktop Navigation     -->
@@ -939,7 +805,8 @@
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
         padding: 0 (16/16rem);
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: #1a1a1a;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
@@ -960,10 +827,10 @@
 
         .cs-logo {
             width: 18.4%;
-            max-width: (350/16rem);
-            height: (65/16rem);
+            max-width: (340/16rem);
+            height: (120/16rem);
             /* margin-right auto pushes everything away from it to the right */
-            margin: 0 auto 0 0;
+            margin: 5px auto 5px 0;
             padding: 0;
             display: flex;
             justify-content: center;
@@ -998,11 +865,13 @@
 
         .cs-li-link {
             /* 14px - 16px */
-            font-size: clamp(0.875rem, 1vw, 1rem);
+            /* font-size: clamp(0.875rem, 1vw, 1rem); */
+            font-size: clamp(1rem, 1vw, 1.25rem); /* V added */
             line-height: 1.5em;
             text-decoration: none;
             margin: 0;
-            color: var(--bodyTextColor);
+            /* color: var(--bodyTextColor); */
+            color: var(--bodyTextColorWhite);
             display: block;
             position: relative;
             &:hover {
@@ -1034,35 +903,15 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 1024px) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
 
-            .cs-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-li-link {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-li-link {
-                &:before {
-                    background-color: var(--primaryLight);
-                }
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---          Banner            -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
+
+
 @media only screen and (min-width: 0rem) {
     #banner-310 {
         /* 144px - 252px */
@@ -1171,6 +1020,7 @@
     }
 }
 
+
 /*-- -------------------------- -->
 <---            CTA             -->
 <--- -------------------------- -*/
@@ -1200,6 +1050,7 @@
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
             align-items: center;
+
         }
 
         .cs-title {
@@ -1209,7 +1060,7 @@
         .cs-text {
             margin-bottom: (16/16rem);
             color: var(--bodyTextColorWhite);
-            opacity: 0.8;
+            opacity: 0.85;
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
@@ -1232,8 +1083,8 @@
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #000;
-                opacity: 0.8;
+                background: #29455c;
+                opacity: 0.7;
                 top: 0;
                 left: 0;
                 z-index: 1;
@@ -1301,6 +1152,15 @@
         .cs-text {
             color: var(--bodyTextColorWhite);
             margin-bottom: (16/16rem);
+        }
+
+        .cs-text-2 { /* V added */
+            color: #b9b9b9;
+            font-size: 0.9rem;
+
+                a {
+                    font-size: 0.9rem;
+                }
         }
 
         .cs-social {
@@ -1407,6 +1267,7 @@
 
         .cs-contact-li {
             list-style: none;
+            white-space: nowrap;
             margin-bottom: (0/16rem);
             &:last-of-type {
                 margin-bottom: 0;
@@ -1485,3 +1346,5 @@
         }
     }
 }
+
+
