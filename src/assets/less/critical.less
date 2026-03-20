@@ -143,7 +143,7 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #hero-1856 {
-        padding: clamp(10rem, 22vw, 15em) (16/16rem);  // increase top value
+        /* nothing here */
     }
 }
 
@@ -170,21 +170,7 @@
 @media only screen and (min-width: 120rem) {
     #hero-1856 {
         /* this ties the padding bottom value to the size of the screen width. The wider the image gets the taller it gets, meaning it will get closer and closer to the content. This makes the padding bottom value grow with the screen size so it accounts for the growing height of the svg graphic getting taller */
-        padding-bottom: 14vw;
-
-        .cs-background {
-            background: url("/assets/images/hero-bg-d.jpg");
-            background-size: cover;
-            background-position: center top;  // 👈 controls vertical crop
-            background-repeat: no-repeat;
-            // background-attachment: fixed;
-
-            img {
-                display: none;
-            }
-        }
-
-        
+        padding-bottom: 14vw;        
     }
 }
 
